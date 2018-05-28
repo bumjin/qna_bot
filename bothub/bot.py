@@ -3,8 +3,8 @@
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
 from bothub_client.bot import BaseBot
-from .ini import Translate
-
+from .ini import CSVReader
+from .excel import ExcelReader
 import csv
 
 class Bot(BaseBot):
@@ -50,6 +50,7 @@ class Bot(BaseBot):
       self.send_message('QnA 챗봇입니다.')
     
     def describe_message(self, text):
-      t = Translate()
-      msg = t.ini_describe(text)
+      #t = CSVReader()
+      t = ExcelReader()
+      msg = t.find(text)
       self.send_message(msg)

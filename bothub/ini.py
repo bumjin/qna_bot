@@ -7,12 +7,12 @@ from urllib.request import Request
 from urllib.request import urlopen
 from urllib.parse import quote
 
-class Translate(object):
+class CSVReader(object):
  
   def __init__(self):
     return
     
-  def ini_describe(self, text):
+  def find(self, text):
     try:
       with open('bothub/data.csv', 'r') as raw:
         lines = raw.readlines()
